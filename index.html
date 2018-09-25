@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test-work-vue</title>
+  </head>
+  <body>
+    <div class="content">
+      <p class="text_size_26"><span class="text_style_bold text_color_black">Шаг 1 </span>&nbsp;<span class="text_color_blue text_style_light"> Вводные данные</span></p>
+      <p class="text_color_darkgray text_size_15">Выберите необходимые параметры: язык программирования баз
+        данных&nbsp;и количество рабочих мест</p>
+      <div id="date">
+        <div class="block background_color_lightblue block_border_4 display_flex display_flex_justify display_flex_verticalcenter">
+          <p class="width_240 text_color_darkblue text_size_20">База данных на <span class="text_color_blue text_size_14">?</span></p>
+          <div class="background_color_white block__switch border_style_solid border_width_1 border_color_light text_size_16 block_border_4" v-bind:class="type" v-on:click.prevent>
+            <a href="#" class="button button_sqlite text_size_16 text_style_bold" v-on:click="makeActiveDate('button_sqlite')">SQLite</a>
+            <a href="#" class="button button_sql text_size_16 text_style_bold" v-on:click="makeActiveDate('button_sql')">SQL</a>
+          </div>
+        </div>
+        <div class="block background_color_lightblue block_border_4 display_flex display_flex_justify display_flex_verticalcenter">
+          <p class="width_240 text_color_darkblue text_size_20">Нужен интернет-магазин</p>
+          <div class="background_color_white block__switch border_style_solid border_width_1 border_color_light text_size_16 block_border_4" v-bind:class="shop" v-on:click.prevent>
+            <a href="#" class="button button_shopno text_size_16 text_style_bold" v-on:click="makeActiveShop('button_shopno')">Нет</a>
+            <a href="#" class="button button_shopyes text_size_16 text_style_bold" v-on:click="makeActiveShop('button_shopyes')">Да</a>
+          </div>
+        </div>
+        <div class="block background_color_lightblue block_border_4 display_flex display_flex_justify display_flex_verticalcenter">
+          <p class="width_240 text_color_darkblue text_size_20">Рабочих мест</p>
+          <div class="background_color_white block__switch text_size_16 block_border_4 display_flex display_flex_justify display_flex_verticalcenter" v-bind:class="disabletype" v-on:click.prevent>
+            <a href="#" class="button button_down text_size_16 text_style_bold border_style_solid border_width_1 border_color_light text_color_darkblue" v-on:click="changeWorkstations(-1)">&#9660;</a>
+            <span class="text_style_bold text_size_25">{{workstations}}</span>
+            <a href="#" class="button button_up text_size_16 text_style_bold" v-on:click="changeWorkstations(1)">&#9650;</a>
+          </div>
+        </div>
+        <div class="block background_color_lightgreen block_border_4 display_flex display_flex_justify display_flex_verticalcenter">
+          <p class="text_size_16 text_color_green text_align_center width_100per"><span class="icon__gift_green"></span> 8 часов обученияв подарок!</p>
+        </div>
+        <hr />
+        <p class="text_size_26"><span class="text_style_bold text_color_black">Шаг 2 </span>&nbsp;<span class="text_color_blue text_style_light"> Обслуживание</span></p>
+        <p class="text_color_darkgray text_size_15">Выберите подходящий тип обслуживания системы &laquo;AutoИнтеллект&raquo;, исходя из используемого функционала</p>
+        <div class="block background_color_lightblue block_border_4 block_size_big">
+          <p class="text_size_20 text_color_darkblue">Что обслуживаем?</p>
+          <label class="radiobutton text_color_darkblue text_size_16" v-on:click="changeAutoIntell('Autoинтеллек')">Autoинтеллек
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobutton text_color_darkblue text_size_16" v-on:click="changeAutoIntell('Autoинтеллек и Веб-вход')">Autoинтеллек и Веб-вход
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobutton text_color_darkblue text_size_16" v-on:click="changeAutoIntell('Autoинтеллек и Веб-вход на вашем сервере')">Autoинтеллек и Веб-вход на вашем сервере
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
